@@ -3,8 +3,29 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Službeni portal turnira Šahomanija 2026: dvije grupe po 4 igrača, raspored partija po rundama, polufinale, finale, propozicije i trening protiv računala." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="hr_HR" />
+    <meta property="og:title" content="Šahomanija 2026 - Službeni portal" />
+    <meta property="og:description" content="Službeni pregled grupa, partija po rundama, završnice, rezultata i propozicija turnira Šahomanija 2026." />
+    <meta property="og:image" content="favicon.png" />
+    <meta property="og:image:alt" content="Šahomanija 2026 ikona" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Šahomanija 2026 - Službeni portal" />
+    <meta name="twitter:description" content="Službeni pregled grupa, partija po rundama, završnice, rezultata i propozicija turnira Šahomanija 2026." />
+    <meta name="twitter:image" content="favicon.png" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <title>Šahomanija 2026 - Službeni portal</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsEvent",
+        "name": "Šahomanija 2026",
+        "description": "Šahovski turnir u dvije grupe po 4 igrača kroz tri runde, nakon čega slijede polufinale i finale.",
+        "sport": "Chess",
+        "inLanguage": "hr"
+    }
+    </script>
     <style type="text/css">
         body {
             background-color: #d9dfe6;
@@ -74,6 +95,13 @@
             color: #1e4b7a;
             border-right: 1px solid #cccccc;
             cursor: pointer;
+            background: none;
+            border-top: 0;
+            border-bottom: 0;
+            border-left: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 32px;
         }
 
         .nav-tab:first-child {
@@ -454,17 +482,17 @@
         <p>Službeni pregled grupa, partija, rezultata i propozicija natjecanja</p>
     </div>
 
-    <div id="nav">
-        <span class="nav-tab active" id="tab-pocetna" onclick="otvoriTab('pocetna')">Početna</span>
-        <span class="nav-tab" id="tab-zdrijeb" onclick="otvoriTab('zdrijeb')">Ždrijeb i rezultati</span>
-        <span class="nav-tab" id="tab-propozicije" onclick="otvoriTab('propozicije')">Propozicije</span>
-        <span class="nav-tab" id="tab-robot" onclick="otvoriTab('robot')">Igraj protiv računala</span>
+    <div id="nav" role="tablist" aria-label="Glavna navigacija turnira">
+        <button type="button" role="tab" aria-selected="true" aria-controls="panel-pocetna" class="nav-tab active" id="tab-pocetna" onclick="otvoriTab('pocetna')">Početna</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-zdrijeb" class="nav-tab" id="tab-zdrijeb" onclick="otvoriTab('zdrijeb')">Ždrijeb i rezultati</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-propozicije" class="nav-tab" id="tab-propozicije" onclick="otvoriTab('propozicije')">Propozicije</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-robot" class="nav-tab" id="tab-robot" onclick="otvoriTab('robot')">Igraj protiv računala</button>
     </div>
 
     <div id="content">
 
         <!-- TAB 1: POČETNA -->
-        <div class="tab-panel active" id="panel-pocetna">
+        <div role="tabpanel" aria-labelledby="tab-pocetna" class="tab-panel active" id="panel-pocetna">
             <div class="section-title">Pregled turnira</div>
             <div class="summary-box">
                 Turnir se igra u dvije grupe po 4 igrača kroz tri runde. Dva najbolja igrača iz svake grupe prolaze u polufinale, a najbolji iz svake grupe susreću se u finalu.
@@ -507,7 +535,7 @@
         </div>
 
         <!-- TAB 2: ŽDRIJEB I REZULTATI -->
-        <div class="tab-panel" id="panel-zdrijeb">
+        <div role="tabpanel" aria-labelledby="tab-zdrijeb" class="tab-panel" id="panel-zdrijeb">
             <div class="info-box">
                 <strong>Službena objava:</strong> Rezultate i sudionike završnice objavljuje isključivo organizator turnira. Iz svake grupe u polufinale idu dva najbolja igrača, a u finale najbolji iz svake grupe.
             </div>
@@ -625,7 +653,7 @@
         </div>
 
         <!-- TAB 3: PROPOZICIJE -->
-        <div class="tab-panel" id="panel-propozicije">
+        <div role="tabpanel" aria-labelledby="tab-propozicije" class="tab-panel" id="panel-propozicije">
             <div class="section-title">Osnovne propozicije i dogovor</div>
 
             <table class="rules-table">
@@ -649,12 +677,12 @@
         </div>
 
         <!-- TAB 4: IGRAJ PROTIV RAČUNALA -->
-        <div class="tab-panel" id="panel-robot">
+        <div role="tabpanel" aria-labelledby="tab-robot" class="tab-panel" id="panel-robot">
             <div class="section-title">Trening modul – Partija protiv računala</div>
 
             <div class="chess-wrap">
                 <div class="chess-board-col">
-                    <table class="board-grid" id="chess-board-table">
+                    <table class="board-grid" id="chess-board-table" aria-label="Šahovska ploča">
                         <tr>
                             <td id="c0_0" onclick="klik(0,0)" class="sq-l"></td>
                             <td id="c0_1" onclick="klik(0,1)" class="sq-d"></td>
@@ -742,7 +770,7 @@
                 </div>
 
                 <div class="chess-sidebar">
-                    <div class="chess-status-bar" id="chess-status">Na potezu: Bijeli (Vi)</div>
+                    <div class="chess-status-bar" id="chess-status" role="status" aria-live="polite">Na potezu: Bijeli (Vi)</div>
 
                     <div style="margin-bottom: 10px;">
                         <label for="ai-level"><strong>Razina računala:</strong></label><br /><br />
@@ -757,7 +785,7 @@
                         Pijuni se automatski promoviraju u damu. Podržani su rokada i en passant.
                     </div>
 
-                    <div class="move-history-box" id="move-log">
+                    <div class="move-history-box" id="move-log" aria-label="Zapisnik poteza">
                         <strong>Zapisnik poteza:</strong><br />
                     </div>
                 </div>
@@ -782,8 +810,12 @@ function otvoriTab(naziv) {
     for (var i = 0; i < ids.length; i++) {
         var t = document.getElementById("tab-" + ids[i]);
         var p = document.getElementById("panel-" + ids[i]);
-        if (t) t.className = (ids[i] === naziv) ? "nav-tab active" : "nav-tab";
-        if (p) p.className = (ids[i] === naziv) ? "tab-panel active" : "tab-panel";
+        var isSel = (ids[i] === naziv);
+        if (t) {
+            t.className = isSel ? "nav-tab active" : "nav-tab";
+            t.setAttribute("aria-selected", isSel ? "true" : "false");
+        }
+        if (p) p.className = isSel ? "tab-panel active" : "tab-panel";
     }
     if (naziv === "robot") {
         osvjeziPlocu();
@@ -830,7 +862,7 @@ function svgFigura(code) {
                '<rect x="10" y="28" width="20" height="5" rx="1.5" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>';
     }
 
-    return '<svg class="chess-svg" viewBox="0 0 40 36" xmlns="http://www.w3.org/2000/svg">' + body + '</svg>';
+    return '<svg class="chess-svg" viewBox="0 0 40 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' + body + '</svg>';
 }
 
 /* === ŠAH === */
@@ -875,6 +907,11 @@ function novaPartija() {
 }
 
 function osvjeziPlocu() {
+    var cols = "abcdefgh";
+    var pieceNames = {
+        wP: "bijeli pijun", wR: "bijeli top", wN: "bijeli skakač", wB: "bijeli lovac", wQ: "bijela dama", wK: "bijeli kralj",
+        bP: "crni pijun", bR: "crni top", bN: "crni skakač", bB: "crni lovac", bQ: "crna dama", bK: "crni kralj"
+    };
     for (var r = 0; r < 8; r++) {
         for (var c = 0; c < 8; c++) {
             var td = document.getElementById("c" + r + "_" + c);
@@ -895,6 +932,8 @@ function osvjeziPlocu() {
 
             var p = board[r][c];
             td.innerHTML = p ? svgFigura(p) : "";
+            var sqLabel = cols.charAt(c) + (8 - r);
+            td.setAttribute("aria-label", p ? (sqLabel + ", " + pieceNames[p]) : (sqLabel + ", prazno polje"));
         }
     }
 }
