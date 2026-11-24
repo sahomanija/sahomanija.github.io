@@ -1,0 +1,1198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>Šahomanija 2026 - Službeni portal</title>
+    <style type="text/css">
+        body {
+            background-color: #d9dfe6;
+            background-image: url("bg.jpeg"), linear-gradient(to bottom, #c5ced8 0%, #e6eaef 300px);
+            background-position: center top, left top;
+            background-size: cover, 100% 300px;
+            background-repeat: no-repeat, repeat-x;
+            background-attachment: fixed, scroll;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: #333333;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        #wrapper {
+            width: 920px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #99a6b5;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+        }
+
+        #top-bar {
+            background-color: #f2f4f7;
+            border-bottom: 1px solid #dce1e7;
+            padding: 6px 20px;
+            font-size: 11px;
+            color: #666666;
+            text-align: right;
+        }
+
+        #header {
+            background: linear-gradient(to bottom, #1e4b7a 0%, #102e4d 100%);
+            color: #ffffff;
+            padding: 25px 25px;
+            border-bottom: 4px solid #cc8400;
+        }
+
+        #header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+            text-shadow: 1px 1px 2px #000000;
+        }
+
+        #header p {
+            margin: 5px 0 0 0;
+            font-size: 12px;
+            color: #b8cde0;
+        }
+
+        #nav {
+            background: linear-gradient(to bottom, #f9f9f9 0%, #e1e1e1 50%, #d4d4d4 51%, #ececec 100%);
+            border-bottom: 1px solid #b5b5b5;
+            min-height: 32px;
+            line-height: 32px;
+            padding: 0 15px;
+        }
+
+        .nav-tab {
+            display: inline-block;
+            padding: 0 16px;
+            font-weight: bold;
+            color: #1e4b7a;
+            border-right: 1px solid #cccccc;
+            cursor: pointer;
+        }
+
+        .nav-tab:first-child {
+            border-left: 1px solid #cccccc;
+        }
+
+        .nav-tab:hover {
+            background: linear-gradient(to bottom, #ffffff 0%, #e8eef5 100%);
+            color: #102e4d;
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(to bottom, #1e4b7a 0%, #15385c 100%);
+            color: #ffffff;
+        }
+
+        #content {
+            padding: 20px 25px;
+            min-height: 320px;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .section-title {
+            background: linear-gradient(to bottom, #f4f6f9 0%, #e3e8ee 100%);
+            border: 1px solid #c5ced8;
+            border-left: 4px solid #1e4b7a;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #102e4d;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background-color: #fffbe6;
+            border: 1px solid #e6d38a;
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            color: #5c4d14;
+        }
+
+        .summary-box {
+            background-color: #f4f7fa;
+            border: 1px solid #c5ced8;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .groups-grid {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .group-col {
+            float: left;
+            width: 48.5%;
+            box-sizing: border-box;
+        }
+
+        .group-col:first-child {
+            margin-right: 3%;
+        }
+
+        table.players-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        table.players-table th {
+            background: linear-gradient(to bottom, #4b739c 0%, #2c527a 100%);
+            color: #ffffff;
+            padding: 7px 10px;
+            border: 1px solid #1e4b7a;
+            text-align: left;
+            font-size: 12px;
+        }
+
+        table.players-table td {
+            border: 1px solid #dce1e7;
+            padding: 7px 10px;
+            background-color: #ffffff;
+        }
+
+        .table-scroll {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        table.bracket-table {
+            width: 100%;
+            min-width: 720px;
+            border-collapse: collapse;
+        }
+
+        table.bracket-table th {
+            background: linear-gradient(to bottom, #4b739c 0%, #2c527a 100%);
+            color: #ffffff;
+            padding: 8px;
+            border: 1px solid #1e4b7a;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        table.bracket-table td {
+            vertical-align: top;
+            padding: 10px;
+            border: 1px solid #dce1e7;
+            background-color: #fafbfd;
+            width: 25%;
+        }
+
+        .round-label {
+            font-size: 11px;
+            font-weight: bold;
+            color: #1e4b7a;
+            text-transform: uppercase;
+            margin: 10px 0 5px 0;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #dce1e7;
+        }
+
+        .round-label:first-child {
+            margin-top: 0;
+        }
+
+        .match-box {
+            border: 1px solid #aeb9c7;
+            background-color: #ffffff;
+            margin: 5px 0;
+        }
+
+        .slot {
+            padding: 6px 9px;
+            font-size: 12px;
+            color: #222222;
+        }
+
+        .slot:first-child {
+            border-bottom: 1px solid #dce1e7;
+        }
+
+        .champion-panel {
+            border: 2px solid #cc8400;
+            background: linear-gradient(to bottom, #ffffff 0%, #fff8e6 100%);
+            padding: 15px 10px;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .champion-panel .label {
+            font-size: 11px;
+            color: #888888;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .champion-panel .name {
+            font-size: 15px;
+            font-weight: bold;
+            color: #102e4d;
+        }
+
+        .corp-btn {
+            background: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
+            border: 1px solid #999999;
+            border-radius: 3px;
+            padding: 6px 12px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            color: #333333;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .corp-select {
+            border: 1px solid #999999;
+            padding: 5px 8px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            background-color: #ffffff;
+            margin-right: 6px;
+        }
+
+        table.rules-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.rules-table td {
+            border: 1px solid #dce1e7;
+            padding: 8px 12px;
+        }
+
+        table.rules-table td.rule-num {
+            width: 150px;
+            background-color: #f2f4f7;
+            font-weight: bold;
+            color: #1e4b7a;
+        }
+
+        /* Šahovska ploča protiv robota */
+        .chess-wrap {
+            overflow: hidden;
+        }
+
+        .chess-board-col {
+            float: left;
+            width: 400px;
+            margin-right: 20px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        table.board-grid {
+            border-collapse: collapse;
+            border: 3px solid #1e4b7a;
+            width: 400px;
+            height: 400px;
+            table-layout: fixed;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        table.board-grid tr {
+            box-sizing: border-box;
+        }
+
+        table.board-grid td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            padding: 0;
+            border: 1px solid #8c9aa8;
+            box-sizing: border-box;
+        }
+
+        .sq-l {
+            background-color: #f3f6fa;
+        }
+
+        .sq-d {
+            background-color: #7e9bb8;
+        }
+
+        .sq-sel {
+            background-color: #ffe082;
+        }
+
+        .sq-last {
+            background-color: #c8e6c9;
+        }
+
+        .sq-move {
+            background-color: #d4e8fc;
+        }
+
+        .sq-cap {
+            background-color: #ffb3b3;
+        }
+
+        .chess-svg {
+            width: 38px;
+            height: 38px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .chess-sidebar {
+            overflow: hidden;
+            min-width: 240px;
+            border: 1px solid #c5ced8;
+            background-color: #fafbfd;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .chess-status-bar {
+            background-color: #eef4fa;
+            border: 1px solid #b8cde0;
+            padding: 10px;
+            font-weight: bold;
+            color: #102e4d;
+            margin-bottom: 12px;
+        }
+
+        .move-history-box {
+            background-color: #ffffff;
+            border: 1px solid #dce1e7;
+            height: 180px;
+            overflow-y: auto;
+            padding: 8px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+
+        #footer {
+            background-color: #f2f4f7;
+            border-top: 1px solid #dce1e7;
+            padding: 12px 25px;
+            font-size: 11px;
+            color: #777777;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 950px) {
+            body { padding: 10px; }
+            #wrapper { width: 100%; }
+            #header { padding: 18px 15px; }
+            #header h1 { font-size: 19px; }
+            #content { padding: 15px; }
+            #top-bar { text-align: left; padding: 6px 15px; }
+        }
+
+        @media screen and (max-width: 600px) {
+            #nav { padding: 0 5px; }
+            .nav-tab { padding: 0 8px; font-size: 11px; }
+            .slot { padding: 9px 8px; }
+            table.rules-table td.rule-num { width: 105px; }
+            .group-col {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .chess-board-col {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 12px;
+            }
+            table.board-grid {
+                width: 100%;
+                height: auto;
+            }
+            table.board-grid tr {
+                height: calc((100vw - 56px) / 8);
+                max-height: 50px;
+            }
+            table.board-grid td {
+                width: 12.5%;
+                height: calc((100vw - 56px) / 8);
+                max-height: 50px;
+            }
+            .chess-svg {
+                width: 78%;
+                height: 78%;
+            }
+            .chess-sidebar {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="top-bar">
+        Sustav natjecanja: 2 grupe po 4 igrača + polufinale i finale | Status: U tijeku
+    </div>
+
+    <div id="header">
+        <h1>ŠAHOMANIJA 2026</h1>
+        <p>Službeni pregled grupa, partija, rezultata i propozicija natjecanja</p>
+    </div>
+
+    <div id="nav">
+        <span class="nav-tab active" id="tab-pocetna" onclick="otvoriTab('pocetna')">Početna</span>
+        <span class="nav-tab" id="tab-zdrijeb" onclick="otvoriTab('zdrijeb')">Ždrijeb i rezultati</span>
+        <span class="nav-tab" id="tab-propozicije" onclick="otvoriTab('propozicije')">Propozicije</span>
+        <span class="nav-tab" id="tab-robot" onclick="otvoriTab('robot')">Igraj protiv računala</span>
+    </div>
+
+    <div id="content">
+
+        <!-- TAB 1: POČETNA -->
+        <div class="tab-panel active" id="panel-pocetna">
+            <div class="section-title">Pregled turnira</div>
+            <div class="summary-box">
+                Turnir se igra u dvije grupe po 4 igrača kroz tri runde. Dva najbolja igrača iz svake grupe prolaze u polufinale, a najbolji iz svake grupe susreću se u finalu.
+            </div>
+
+            <div class="section-title">Sastav grupa (8 sudionika)</div>
+            <div class="groups-grid">
+                <div class="group-col">
+                    <table class="players-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Prva grupa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="width: 45px;">1.</td><td>Duje</td></tr>
+                            <tr><td>2.</td><td>Vanja</td></tr>
+                            <tr><td>3.</td><td>Branko</td></tr>
+                            <tr><td>4.</td><td>Vigo</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="group-col">
+                    <table class="players-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Druga grupa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="width: 45px;">1.</td><td>Basic</td></tr>
+                            <tr><td>2.</td><td>Mariano</td></tr>
+                            <tr><td>3.</td><td>Perkov</td></tr>
+                            <tr><td>4.</td><td>Timur</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: ŽDRIJEB I REZULTATI -->
+        <div class="tab-panel" id="panel-zdrijeb">
+            <div class="info-box">
+                <strong>Službena objava:</strong> Rezultate i sudionike završnice objavljuje isključivo organizator turnira. Iz svake grupe u polufinale idu dva najbolja igrača, a u finale najbolji iz svake grupe.
+            </div>
+
+            <div class="section-title">Raspored partija po rundama i završnica</div>
+
+            <div class="table-scroll">
+                <table class="bracket-table">
+                    <thead>
+                        <tr>
+                            <th>Prva runda</th>
+                            <th>Druga runda</th>
+                            <th>Treća runda</th>
+                            <th>Polufinale, finale i prvak</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- PRVA RUNDA -->
+                            <td>
+                                <div class="round-label">Druga grupa</div>
+                                <div class="match-box">
+                                    <div class="slot">Mariano</div>
+                                    <div class="slot">Timur</div>
+                                </div>
+                                <div class="match-box">
+                                    <div class="slot">Basic</div>
+                                    <div class="slot">Perkov</div>
+                                </div>
+
+                                <div class="round-label">Prva grupa</div>
+                                <div class="match-box">
+                                    <div class="slot">Vigo</div>
+                                    <div class="slot">Duje</div>
+                                </div>
+                                <div class="match-box">
+                                    <div class="slot">Vanja</div>
+                                    <div class="slot">Branko</div>
+                                </div>
+                            </td>
+
+                            <!-- DRUGA RUNDA -->
+                            <td>
+                                <div class="round-label">Druga grupa</div>
+                                <div class="match-box">
+                                    <div class="slot">Timur</div>
+                                    <div class="slot">Basic</div>
+                                </div>
+                                <div class="match-box">
+                                    <div class="slot">Perkov</div>
+                                    <div class="slot">Mariano</div>
+                                </div>
+
+                                <div class="round-label">Prva grupa</div>
+                                <div class="match-box">
+                                    <div class="slot">Branko</div>
+                                    <div class="slot">Duje</div>
+                                </div>
+                                <div class="match-box">
+                                    <div class="slot">Vigo</div>
+                                    <div class="slot">Vanja</div>
+                                </div>
+                            </td>
+
+                            <!-- TREĆA RUNDA -->
+                            <td>
+                                <div class="round-label">Druga grupa</div>
+                                <div class="match-box">
+                                    <div class="slot">Timur</div>
+                                    <div class="slot">Perkov</div>
+                                </div>
+                                <div class="match-box">
+                                    <div class="slot">Basic</div>
+                                    <div class="slot">Mariano</div>
+                                </div>
+
+                                <div class="round-label">Prva grupa</div>
+                                <div class="match-box">
+                                    <div class="slot">Branko</div>
+                                    <div class="slot">Vigo</div>
+                                </div>
+                                <div class="match-box">
+                                    <div class="slot">Duje</div>
+                                    <div class="slot">Vanja</div>
+                                </div>
+                            </td>
+
+                            <!-- POLUFINALE, FINALE I PRVAK -->
+                            <td>
+                                <div class="round-label">Polufinale (2 najbolja iz svake grupe)</div>
+                                <div class="match-box">
+                                    <div class="slot" id="sf1_a">1. iz Prve grupe</div>
+                                    <div class="slot" id="sf1_b">2. iz Druge grupe</div>
+                                </div>
+                                <div class="match-box">
+                                    <div class="slot" id="sf2_a">1. iz Druge grupe</div>
+                                    <div class="slot" id="sf2_b">2. iz Prve grupe</div>
+                                </div>
+
+                                <div class="round-label">Finale (najbolji iz svake grupe)</div>
+                                <div class="match-box">
+                                    <div class="slot" id="f1">Najbolji iz Prve grupe</div>
+                                    <div class="slot" id="f2">Najbolji iz Druge grupe</div>
+                                </div>
+
+                                <div class="champion-panel">
+                                    <div class="label">Osvajač turnira</div>
+                                    <div class="name" id="prvak">Nije određeno</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 3: PROPOZICIJE -->
+        <div class="tab-panel" id="panel-propozicije">
+            <div class="section-title">Osnovne propozicije i dogovor</div>
+
+            <table class="rules-table">
+                <tr>
+                    <td class="rule-num">Format igre</td>
+                    <td>Dvije grupe po 4 igrača (3 runde), zatim polufinale (2 najbolja iz svake grupe) i finale (najbolji iz svake grupe).</td>
+                </tr>
+                <tr>
+                    <td class="rule-num">Tempo igre</td>
+                    <td>Prema dogovoru sudionika prije početka susreta (standardno 10 min po igraču).</td>
+                </tr>
+                <tr>
+                    <td class="rule-num">Odabir figura</td>
+                    <td>Izvlačenjem boje pijuna prije početka partije.</td>
+                </tr>
+                <tr>
+                    <td class="rule-num">Neriješen ishod</td>
+                    <td>U slučaju remija igra se dodatna brzopotezna partija (3 minute) sa zamijenjenim bojama.</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- TAB 4: IGRAJ PROTIV RAČUNALA -->
+        <div class="tab-panel" id="panel-robot">
+            <div class="section-title">Trening modul – Partija protiv računala</div>
+
+            <div class="chess-wrap">
+                <div class="chess-board-col">
+                    <table class="board-grid" id="chess-board-table">
+                        <tr>
+                            <td id="c0_0" onclick="klik(0,0)" class="sq-l"></td>
+                            <td id="c0_1" onclick="klik(0,1)" class="sq-d"></td>
+                            <td id="c0_2" onclick="klik(0,2)" class="sq-l"></td>
+                            <td id="c0_3" onclick="klik(0,3)" class="sq-d"></td>
+                            <td id="c0_4" onclick="klik(0,4)" class="sq-l"></td>
+                            <td id="c0_5" onclick="klik(0,5)" class="sq-d"></td>
+                            <td id="c0_6" onclick="klik(0,6)" class="sq-l"></td>
+                            <td id="c0_7" onclick="klik(0,7)" class="sq-d"></td>
+                        </tr>
+                        <tr>
+                            <td id="c1_0" onclick="klik(1,0)" class="sq-d"></td>
+                            <td id="c1_1" onclick="klik(1,1)" class="sq-l"></td>
+                            <td id="c1_2" onclick="klik(1,2)" class="sq-d"></td>
+                            <td id="c1_3" onclick="klik(1,3)" class="sq-l"></td>
+                            <td id="c1_4" onclick="klik(1,4)" class="sq-d"></td>
+                            <td id="c1_5" onclick="klik(1,5)" class="sq-l"></td>
+                            <td id="c1_6" onclick="klik(1,6)" class="sq-d"></td>
+                            <td id="c1_7" onclick="klik(1,7)" class="sq-l"></td>
+                        </tr>
+                        <tr>
+                            <td id="c2_0" onclick="klik(2,0)" class="sq-l"></td>
+                            <td id="c2_1" onclick="klik(2,1)" class="sq-d"></td>
+                            <td id="c2_2" onclick="klik(2,2)" class="sq-l"></td>
+                            <td id="c2_3" onclick="klik(2,3)" class="sq-d"></td>
+                            <td id="c2_4" onclick="klik(2,4)" class="sq-l"></td>
+                            <td id="c2_5" onclick="klik(2,5)" class="sq-d"></td>
+                            <td id="c2_6" onclick="klik(2,6)" class="sq-l"></td>
+                            <td id="c2_7" onclick="klik(2,7)" class="sq-d"></td>
+                        </tr>
+                        <tr>
+                            <td id="c3_0" onclick="klik(3,0)" class="sq-d"></td>
+                            <td id="c3_1" onclick="klik(3,1)" class="sq-l"></td>
+                            <td id="c3_2" onclick="klik(3,2)" class="sq-d"></td>
+                            <td id="c3_3" onclick="klik(3,3)" class="sq-l"></td>
+                            <td id="c3_4" onclick="klik(3,4)" class="sq-d"></td>
+                            <td id="c3_5" onclick="klik(3,5)" class="sq-l"></td>
+                            <td id="c3_6" onclick="klik(3,6)" class="sq-d"></td>
+                            <td id="c3_7" onclick="klik(3,7)" class="sq-l"></td>
+                        </tr>
+                        <tr>
+                            <td id="c4_0" onclick="klik(4,0)" class="sq-l"></td>
+                            <td id="c4_1" onclick="klik(4,1)" class="sq-d"></td>
+                            <td id="c4_2" onclick="klik(4,2)" class="sq-l"></td>
+                            <td id="c4_3" onclick="klik(4,3)" class="sq-d"></td>
+                            <td id="c4_4" onclick="klik(4,4)" class="sq-l"></td>
+                            <td id="c4_5" onclick="klik(4,5)" class="sq-d"></td>
+                            <td id="c4_6" onclick="klik(4,6)" class="sq-l"></td>
+                            <td id="c4_7" onclick="klik(4,7)" class="sq-d"></td>
+                        </tr>
+                        <tr>
+                            <td id="c5_0" onclick="klik(5,0)" class="sq-d"></td>
+                            <td id="c5_1" onclick="klik(5,1)" class="sq-l"></td>
+                            <td id="c5_2" onclick="klik(5,2)" class="sq-d"></td>
+                            <td id="c5_3" onclick="klik(5,3)" class="sq-l"></td>
+                            <td id="c5_4" onclick="klik(5,4)" class="sq-d"></td>
+                            <td id="c5_5" onclick="klik(5,5)" class="sq-l"></td>
+                            <td id="c5_6" onclick="klik(5,6)" class="sq-d"></td>
+                            <td id="c5_7" onclick="klik(5,7)" class="sq-l"></td>
+                        </tr>
+                        <tr>
+                            <td id="c6_0" onclick="klik(6,0)" class="sq-l"></td>
+                            <td id="c6_1" onclick="klik(6,1)" class="sq-d"></td>
+                            <td id="c6_2" onclick="klik(6,2)" class="sq-l"></td>
+                            <td id="c6_3" onclick="klik(6,3)" class="sq-d"></td>
+                            <td id="c6_4" onclick="klik(6,4)" class="sq-l"></td>
+                            <td id="c6_5" onclick="klik(6,5)" class="sq-d"></td>
+                            <td id="c6_6" onclick="klik(6,6)" class="sq-l"></td>
+                            <td id="c6_7" onclick="klik(6,7)" class="sq-d"></td>
+                        </tr>
+                        <tr>
+                            <td id="c7_0" onclick="klik(7,0)" class="sq-d"></td>
+                            <td id="c7_1" onclick="klik(7,1)" class="sq-l"></td>
+                            <td id="c7_2" onclick="klik(7,2)" class="sq-d"></td>
+                            <td id="c7_3" onclick="klik(7,3)" class="sq-l"></td>
+                            <td id="c7_4" onclick="klik(7,4)" class="sq-d"></td>
+                            <td id="c7_5" onclick="klik(7,5)" class="sq-l"></td>
+                            <td id="c7_6" onclick="klik(7,6)" class="sq-d"></td>
+                            <td id="c7_7" onclick="klik(7,7)" class="sq-l"></td>
+                        </tr>
+                    </table>
+                    <div style="font-size:11px; color:#555; margin-top:4px;">
+                        Vi igrate bijelim figurama (svijetle figure). Kliknite na figuru, zatim na označeno polje.
+                    </div>
+                </div>
+
+                <div class="chess-sidebar">
+                    <div class="chess-status-bar" id="chess-status">Na potezu: Bijeli (Vi)</div>
+
+                    <div style="margin-bottom: 10px;">
+                        <label for="ai-level"><strong>Razina računala:</strong></label><br /><br />
+                        <select id="ai-level" class="corp-select">
+                            <option value="1">Razina 1 – Lagano</option>
+                            <option value="2" selected="selected">Razina 2 – Srednje</option>
+                        </select>
+                        <button type="button" class="corp-btn" onclick="novaPartija()">Nova partija</button>
+                    </div>
+
+                    <div style="font-size: 11px; color: #555555;">
+                        Pijuni se automatski promoviraju u damu. Podržani su rokada i en passant.
+                    </div>
+
+                    <div class="move-history-box" id="move-log">
+                        <strong>Zapisnik poteza:</strong><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        Interna organizacija turnira © 2010–2026 | Optimalno prikazivanje u rezoluciji 1024x768 px
+    </div>
+</div>
+
+<script type="text/javascript">
+window.onerror = function(msg, url, line) {
+    var st = document.getElementById("chess-status");
+    if (st) st.innerHTML = "Greška u skripti (redak " + line + "): " + msg;
+};
+
+function otvoriTab(naziv) {
+    var ids = ["pocetna", "zdrijeb", "propozicije", "robot"];
+    for (var i = 0; i < ids.length; i++) {
+        var t = document.getElementById("tab-" + ids[i]);
+        var p = document.getElementById("panel-" + ids[i]);
+        if (t) t.className = (ids[i] === naziv) ? "nav-tab active" : "nav-tab";
+        if (p) p.className = (ids[i] === naziv) ? "tab-panel active" : "tab-panel";
+    }
+    if (naziv === "robot") {
+        osvjeziPlocu();
+    }
+}
+
+/* === SVG FIGURE === */
+function svgFigura(code) {
+    var isW = (code.charAt(0) === "w");
+    var t = code.charAt(1);
+    var fill = isW ? "#ffffff" : "#222222";
+    var stroke = isW ? "#111111" : "#000000";
+    var detail = isW ? "#111111" : "#ffffff";
+
+    var body = "";
+    if (t === "P") {
+        body = '<circle cx="20" cy="13" r="5.5" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>' +
+               '<path d="M13 21 Q20 18 27 21 L25 27 L15 27 Z" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>' +
+               '<rect x="10" y="28" width="20" height="5" rx="1.5" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>';
+    } else if (t === "R") {
+        body = '<path d="M10 9 H14 V12 H18 V9 H22 V12 H26 V9 H30 V15 L27 17 V27 H13 V17 L10 15 Z" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2" stroke-linejoin="round"/>' +
+               '<rect x="9" y="28" width="22" height="5" rx="1.5" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>';
+    } else if (t === "N") {
+        body = '<path d="M13 27 C13 20 15 15 21 12 L20 8 L25 10 C29 12 30 16 28 20 L25 22 L27 27 Z" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2" stroke-linejoin="round"/>' +
+               '<circle cx="24" cy="13" r="1.5" fill="' + detail + '"/>' +
+               '<rect x="10" y="28" width="20" height="5" rx="1.5" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>';
+    } else if (t === "B") {
+        body = '<circle cx="20" cy="7.5" r="2.2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.8"/>' +
+               '<path d="M20 10 C13 14 12 22 15 27 H25 C28 22 27 14 20 10 Z" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2" stroke-linejoin="round"/>' +
+               '<line x1="17" y1="18" x2="23" y2="18" stroke="' + detail + '" stroke-width="1.8"/>' +
+               '<rect x="10" y="28" width="20" height="5" rx="1.5" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>';
+    } else if (t === "Q") {
+        body = '<circle cx="9" cy="11" r="2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' +
+               '<circle cx="15" cy="8.5" r="2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' +
+               '<circle cx="20" cy="7.5" r="2.2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' +
+               '<circle cx="25" cy="8.5" r="2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' +
+               '<circle cx="31" cy="11" r="2" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>' +
+               '<path d="M10 13 L14 27 H26 L30 13 L24 19 L20 11 L16 19 Z" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2" stroke-linejoin="round"/>' +
+               '<rect x="10" y="28" width="20" height="5" rx="1.5" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>';
+    } else if (t === "K") {
+        body = '<line x1="20" y1="5" x2="20" y2="12" stroke="' + stroke + '" stroke-width="2.2"/>' +
+               '<line x1="16.5" y1="8.5" x2="23.5" y2="8.5" stroke="' + stroke + '" stroke-width="2.2"/>' +
+               '<path d="M13 27 L11 16 Q20 12 29 16 L27 27 Z" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2" stroke-linejoin="round"/>' +
+               '<rect x="10" y="28" width="20" height="5" rx="1.5" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>';
+    }
+
+    return '<svg class="chess-svg" viewBox="0 0 40 36" xmlns="http://www.w3.org/2000/svg">' + body + '</svg>';
+}
+
+/* === ŠAH === */
+var board = [];
+var turn = "w";
+var selected = null;
+var movesList = [];
+var lastMove = null;
+var gameOver = false;
+var moveNum = 1;
+var cr = { wK: true, wQ: true, bK: true, bQ: true };
+var ep = null;
+var labels = { K: "K", Q: "D", R: "T", B: "L", N: "S", P: "P" };
+var vals = { P: 100, N: 320, B: 330, R: 500, Q: 900, K: 20000 };
+
+function pocetnaPloca() {
+    return [
+        ["bR","bN","bB","bQ","bK","bB","bN","bR"],
+        ["bP","bP","bP","bP","bP","bP","bP","bP"],
+        [null,null,null,null,null,null,null,null],
+        [null,null,null,null,null,null,null,null],
+        [null,null,null,null,null,null,null,null],
+        [null,null,null,null,null,null,null,null],
+        ["wP","wP","wP","wP","wP","wP","wP","wP"],
+        ["wR","wN","wB","wQ","wK","wB","wN","wR"]
+    ];
+}
+
+function novaPartija() {
+    board = pocetnaPloca();
+    turn = "w";
+    selected = null;
+    movesList = [];
+    lastMove = null;
+    gameOver = false;
+    moveNum = 1;
+    cr = { wK: true, wQ: true, bK: true, bQ: true };
+    ep = null;
+    document.getElementById("chess-status").innerHTML = "Na potezu: Bijeli (Vi)";
+    document.getElementById("move-log").innerHTML = "<strong>Zapisnik poteza:</strong><br />";
+    osvjeziPlocu();
+}
+
+function osvjeziPlocu() {
+    for (var r = 0; r < 8; r++) {
+        for (var c = 0; c < 8; c++) {
+            var td = document.getElementById("c" + r + "_" + c);
+            if (!td) continue;
+            var cls = ((r + c) % 2 === 0) ? "sq-l" : "sq-d";
+            if (lastMove && ((lastMove.fr === r && lastMove.fc === c) || (lastMove.tr === r && lastMove.tc === c))) {
+                cls = "sq-last";
+            }
+            if (selected && selected.r === r && selected.c === c) {
+                cls = "sq-sel";
+            }
+            for (var m = 0; m < movesList.length; m++) {
+                if (movesList[m].tr === r && movesList[m].tc === c) {
+                    cls = (board[r][c] || movesList[m].epCap) ? "sq-cap" : "sq-move";
+                }
+            }
+            td.className = cls;
+
+            var p = board[r][c];
+            td.innerHTML = p ? svgFigura(p) : "";
+        }
+    }
+}
+
+function klik(r, c) {
+    if (gameOver || turn !== "w") return;
+
+    for (var i = 0; i < movesList.length; i++) {
+        if (movesList[i].tr === r && movesList[i].tc === c) {
+            izvrsi(movesList[i]);
+            selected = null;
+            movesList = [];
+            osvjeziPlocu();
+            if (!gameOver) {
+                document.getElementById("chess-status").innerHTML = "Računalo razmišlja...";
+                setTimeout(potezAI, 150);
+            }
+            return;
+        }
+    }
+
+    var p = board[r][c];
+    if (p && p.charAt(0) === "w") {
+        selected = { r: r, c: c };
+        var all = legalMoves(board, "w", cr, ep);
+        movesList = [];
+        for (var j = 0; j < all.length; j++) {
+            if (all[j].fr === r && all[j].fc === c) movesList.push(all[j]);
+        }
+    } else {
+        selected = null;
+        movesList = [];
+    }
+    osvjeziPlocu();
+}
+
+function izvrsi(mv) {
+    var cols = "abcdefgh";
+    var p = board[mv.fr][mv.fc];
+    var cap = (board[mv.tr][mv.tc] || mv.epCap) ? "x" : "-";
+    var zapis = mv.castle ? (mv.castle === "K" ? "O-O" : "O-O-O") :
+                (labels[p.charAt(1)] + cols.charAt(mv.fc) + (8 - mv.fr) + cap + cols.charAt(mv.tc) + (8 - mv.tr));
+
+    var res = simMove(board, mv, cr, ep);
+    board = res.b;
+    cr = res.c;
+    ep = res.e;
+    lastMove = mv;
+
+    var log = document.getElementById("move-log");
+    if (turn === "w") {
+        log.innerHTML += moveNum + ". " + zapis + " ";
+    } else {
+        log.innerHTML += zapis + "<br />";
+        moveNum++;
+    }
+    log.scrollTop = log.scrollHeight;
+
+    turn = (turn === "w") ? "b" : "w";
+    var nextMoves = legalMoves(board, turn, cr, ep);
+    var chk = inCheck(board, turn);
+    var st = document.getElementById("chess-status");
+
+    if (nextMoves.length === 0) {
+        gameOver = true;
+        if (chk) {
+            st.innerHTML = (turn === "w") ? "ŠAH-MAT! Računalo je pobijedilo." : "ŠAH-MAT! Pobijedili ste!";
+        } else {
+            st.innerHTML = "PAT! Neriješeno.";
+        }
+    } else {
+        if (turn === "w") st.innerHTML = chk ? "ŠAH! Na potezu: Bijeli (Vi)" : "Na potezu: Bijeli (Vi)";
+        else st.innerHTML = chk ? "ŠAH! Računalo je na potezu..." : "Na potezu: Crni (Računalo)";
+    }
+}
+
+function potezAI() {
+    if (gameOver || turn !== "b") return;
+    var depth = parseInt(document.getElementById("ai-level").value, 10) || 2;
+    var moves = legalMoves(board, "b", cr, ep);
+    if (moves.length === 0) return;
+
+    var best = moves[0];
+    var bestScore = 999999;
+
+    for (var i = 0; i < moves.length; i++) {
+        var s = simMove(board, moves[i], cr, ep);
+        var sc = ab(s.b, depth - 1, -1000000, 1000000, true, s.c, s.e);
+        if (sc < bestScore) {
+            bestScore = sc;
+            best = moves[i];
+        }
+    }
+    izvrsi(best);
+    osvjeziPlocu();
+}
+
+function ab(b, depth, alpha, beta, isMax, cRights, epSq) {
+    if (depth === 0) return evalBoard(b);
+    var side = isMax ? "w" : "b";
+    var moves = legalMoves(b, side, cRights, epSq);
+    if (moves.length === 0) {
+        if (inCheck(b, side)) return isMax ? -50000 : 50000;
+        return 0;
+    }
+    if (isMax) {
+        var v = -1000000;
+        for (var i = 0; i < moves.length; i++) {
+            var s = simMove(b, moves[i], cRights, epSq);
+            var ev = ab(s.b, depth - 1, alpha, beta, false, s.c, s.e);
+            if (ev > v) v = ev;
+            if (v > alpha) alpha = v;
+            if (beta <= alpha) break;
+        }
+        return v;
+    } else {
+        var v2 = 1000000;
+        for (var j = 0; j < moves.length; j++) {
+            var s2 = simMove(b, moves[j], cRights, epSq);
+            var ev2 = ab(s2.b, depth - 1, alpha, beta, true, s2.c, s2.e);
+            if (ev2 < v2) v2 = ev2;
+            if (v2 < beta) beta = v2;
+            if (beta <= alpha) break;
+        }
+        return v2;
+    }
+}
+
+function evalBoard(b) {
+    var sum = 0;
+    for (var r = 0; r < 8; r++) {
+        for (var c = 0; c < 8; c++) {
+            var p = b[r][c];
+            if (!p) continue;
+            var v = vals[p.charAt(1)] || 0;
+            sum += (p.charAt(0) === "w") ? v : -v;
+        }
+    }
+    return sum;
+}
+
+function cloneB(b) {
+    var nb = [];
+    for (var r = 0; r < 8; r++) {
+        var row = [];
+        for (var c = 0; c < 8; c++) row.push(b[r][c]);
+        nb.push(row);
+    }
+    return nb;
+}
+
+function simMove(b, mv, cRights, epSq) {
+    var nb = cloneB(b);
+    var nc = { wK: cRights.wK, wQ: cRights.wQ, bK: cRights.bK, bQ: cRights.bQ };
+    var nep = null;
+    var p = nb[mv.fr][mv.fc];
+
+    nb[mv.tr][mv.tc] = p;
+    nb[mv.fr][mv.fc] = null;
+
+    if (mv.epCap) nb[mv.fr][mv.tc] = null;
+    if (p.charAt(1) === "P" && Math.abs(mv.tr - mv.fr) === 2) {
+        nep = { r: (mv.fr + mv.tr) / 2, c: mv.fc };
+    }
+    if (p === "wP" && mv.tr === 0) nb[mv.tr][mv.tc] = "wQ";
+    if (p === "bP" && mv.tr === 7) nb[mv.tr][mv.tc] = "bQ";
+
+    if (mv.castle === "K") { nb[mv.fr][5] = nb[mv.fr][7]; nb[mv.fr][7] = null; }
+    if (mv.castle === "Q") { nb[mv.fr][3] = nb[mv.fr][0]; nb[mv.fr][0] = null; }
+
+    if (p === "wK") { nc.wK = false; nc.wQ = false; }
+    if (p === "bK") { nc.bK = false; nc.bQ = false; }
+    return { b: nb, c: nc, e: nep };
+}
+
+function attacked(b, r, c, bySide) {
+    var pDir = (bySide === "w") ? 1 : -1;
+    if (r + pDir >= 0 && r + pDir < 8) {
+        if (c - 1 >= 0 && b[r + pDir][c - 1] === bySide + "P") return true;
+        if (c + 1 < 8 && b[r + pDir][c + 1] === bySide + "P") return true;
+    }
+    var kn = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];
+    for (var i = 0; i < kn.length; i++) {
+        var nr = r + kn[i][0], nc = c + kn[i][1];
+        if (nr >= 0 && nr < 8 && nc >= 0 && nc < 8 && b[nr][nc] === bySide + "N") return true;
+    }
+    for (var dr = -1; dr <= 1; dr++) {
+        for (var dc = -1; dc <= 1; dc++) {
+            if (!dr && !dc) continue;
+            var kr = r + dr, kc = c + dc;
+            if (kr >= 0 && kr < 8 && kc >= 0 && kc < 8 && b[kr][kc] === bySide + "K") return true;
+        }
+    }
+    var dirs = [[-1,0],[1,0],[0,-1],[0,1],[-1,-1],[-1,1],[1,-1],[1,1]];
+    for (var d = 0; d < dirs.length; d++) {
+        var sr = r + dirs[d][0], sc = c + dirs[d][1];
+        while (sr >= 0 && sr < 8 && sc >= 0 && sc < 8) {
+            var p = b[sr][sc];
+            if (p) {
+                var t = p.charAt(1);
+                if (p.charAt(0) === bySide && (t === "Q" || (d < 4 && t === "R") || (d >= 4 && t === "B"))) return true;
+                break;
+            }
+            sr += dirs[d][0]; sc += dirs[d][1];
+        }
+    }
+    return false;
+}
+
+function inCheck(b, side) {
+    var opp = (side === "w") ? "b" : "w";
+    for (var r = 0; r < 8; r++) {
+        for (var c = 0; c < 8; c++) {
+            if (b[r][c] === side + "K") return attacked(b, r, c, opp);
+        }
+    }
+    return false;
+}
+
+function legalMoves(b, side, cRights, epSq) {
+    var ps = [];
+    var opp = (side === "w") ? "b" : "w";
+    for (var r = 0; r < 8; r++) {
+        for (var c = 0; c < 8; c++) {
+            var p = b[r][c];
+            if (!p || p.charAt(0) !== side) continue;
+            var t = p.charAt(1);
+
+            if (t === "P") {
+                var dir = (side === "w") ? -1 : 1;
+                var sr0 = (side === "w") ? 6 : 1;
+                if (r + dir >= 0 && r + dir < 8 && !b[r + dir][c]) {
+                    ps.push({ fr: r, fc: c, tr: r + dir, tc: c });
+                    if (r === sr0 && !b[r + 2 * dir][c]) ps.push({ fr: r, fc: c, tr: r + 2 * dir, tc: c });
+                }
+                for (var dc = -1; dc <= 1; dc += 2) {
+                    var nc = c + dc;
+                    if (nc >= 0 && nc < 8 && r + dir >= 0 && r + dir < 8) {
+                        if (b[r + dir][nc] && b[r + dir][nc].charAt(0) === opp) ps.push({ fr: r, fc: c, tr: r + dir, tc: nc });
+                        else if (epSq && epSq.r === r + dir && epSq.c === nc) ps.push({ fr: r, fc: c, tr: r + dir, tc: nc, epCap: true });
+                    }
+                }
+            } else if (t === "N") {
+                var kn = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];
+                for (var i = 0; i < kn.length; i++) {
+                    var nr = r + kn[i][0], nc2 = c + kn[i][1];
+                    if (nr >= 0 && nr < 8 && nc2 >= 0 && nc2 < 8 && (!b[nr][nc2] || b[nr][nc2].charAt(0) === opp)) {
+                        ps.push({ fr: r, fc: c, tr: nr, tc: nc2 });
+                    }
+                }
+            } else if (t === "K") {
+                for (var dr = -1; dr <= 1; dr++) {
+                    for (var dc2 = -1; dc2 <= 1; dc2++) {
+                        if (!dr && !dc2) continue;
+                        var kr = r + dr, kc = c + dc2;
+                        if (kr >= 0 && kr < 8 && kc >= 0 && kc < 8 && (!b[kr][kc] || b[kr][kc].charAt(0) === opp)) {
+                            ps.push({ fr: r, fc: c, tr: kr, tc: kc });
+                        }
+                    }
+                }
+                var hr = (side === "w") ? 7 : 0;
+                if (r === hr && c === 4 && !attacked(b, hr, 4, opp)) {
+                    if ((side === "w" ? cRights.wK : cRights.bK) && !b[hr][5] && !b[hr][6] && !attacked(b, hr, 5, opp) && !attacked(b, hr, 6, opp)) {
+                        ps.push({ fr: hr, fc: 4, tr: hr, tc: 6, castle: "K" });
+                    }
+                    if ((side === "w" ? cRights.wQ : cRights.bQ) && !b[hr][3] && !b[hr][2] && !b[hr][1] && !attacked(b, hr, 3, opp) && !attacked(b, hr, 2, opp)) {
+                        ps.push({ fr: hr, fc: 4, tr: hr, tc: 2, castle: "Q" });
+                    }
+                }
+            } else {
+                var dirs = [];
+                if (t === "R" || t === "Q") dirs.push([-1,0],[1,0],[0,-1],[0,1]);
+                if (t === "B" || t === "Q") dirs.push([-1,-1],[-1,1],[1,-1],[1,1]);
+                for (var d = 0; d < dirs.length; d++) {
+                    var sr = r + dirs[d][0], sc = c + dirs[d][1];
+                    while (sr >= 0 && sr < 8 && sc >= 0 && sc < 8) {
+                        if (!b[sr][sc]) ps.push({ fr: r, fc: c, tr: sr, tc: sc });
+                        else {
+                            if (b[sr][sc].charAt(0) === opp) ps.push({ fr: r, fc: c, tr: sr, tc: sc });
+                            break;
+                        }
+                        sr += dirs[d][0]; sc += dirs[d][1];
+                    }
+                }
+            }
+        }
+    }
+
+    var out = [];
+    for (var k = 0; k < ps.length; k++) {
+        var s = simMove(b, ps[k], cRights, epSq);
+        if (!inCheck(s.b, side)) out.push(ps[k]);
+    }
+    return out;
+}
+
+novaPartija();
+</script>
+
+</body>
+</html>
